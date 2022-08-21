@@ -11,13 +11,20 @@ namespace MVC_CRUD.Context
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_Student
     {
         public int ID { get; set; }
+        [Required(ErrorMessage = "Required Field!")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Required Field!")]
         public string Fname { get; set; }
+        [Required(ErrorMessage = "Required Field!")]
+        [EmailAddress]
         public string Email { get; set; }
+        [Required(ErrorMessage = "Required Field!")]
+        [MinLength(11, ErrorMessage = "11 Digit Required!")]
         public string Mobile { get; set; }
         public string Description { get; set; }
     }
